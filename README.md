@@ -1,4 +1,4 @@
-# 23 Exercises (Day 10 - Solo Project)
+### 23 Exercises (Day 10 - Solo Project)
 
 <p align="center">
   
