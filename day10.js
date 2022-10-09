@@ -31,15 +31,12 @@ const me = new Object();
 me.name = "Tim";
 me.surname = "Afanasiev";
 me.age = 18;
-console.log("Exercise D: ");
-console.log(me);
-
+console.log("Exercise D: done!");
 /* EXERCISE E
 Write a piece of code for programmatically removing the age property from the previously create object.
 */
 delete me.age;
-console.log("Exercise E: ");
-console.log(me);
+console.log("Exercise E: done!");
 
 /* EXERCISE F
 
@@ -48,8 +45,7 @@ Write a piece of code for programmatically adding to the me object you defined b
 me.lang1 = "HTML";
 me.lang2 = "CSS";
 me.lang3 = "JavaScript";
-console.log("Exercise F: ");
-console.log(me);
+console.log("Exercise F: done!");
 /* EXERCISE G
 
 Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
@@ -57,8 +53,7 @@ Write a piece of code for programmatically removing the last skill from the skil
 */
 
 delete me.lang3;
-console.log("Exercise G: ");
-console.log(me);
+console.log("Exercise G: done!");
 
 // JS Functions
 /* EXERCISE 1
@@ -73,7 +68,14 @@ console.log("Exercise 1: " + random);
 Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 
 */
-
+function whoIsBigger(a, b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+console.log("Exercise 2: " + whoIsBigger(20, 10));
 /* EXERCISE 3
 
 Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
@@ -82,6 +84,10 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 
 */
 
+function SplitMe(str) {
+  return str.split(" ");
+}
+console.log(SplitMe("Wassup my name is Tim"));
 /* EXERCISE 4
 
 Write a function called deleteOne which receives a string and a boolean as parameters.
