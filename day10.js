@@ -27,33 +27,47 @@ console.log("Exercise C: " + getRandomInt(20)); /*max, limit for random number*/
 Create a variable called me and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
 
 */
+const me = new Object();
+me.name = "Tim";
+me.surname = "Afanasiev";
+me.age = 18;
+console.log("Exercise D: ");
+console.log(me);
 
 /* EXERCISE E
-
 Write a piece of code for programmatically removing the age property from the previously create object.
-
 */
+delete me.age;
+console.log("Exercise E: ");
+console.log(me);
 
 /* EXERCISE F
 
 Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
-
 */
-
+me.lang1 = "HTML";
+me.lang2 = "CSS";
+me.lang3 = "JavaScript";
+console.log("Exercise F: ");
+console.log(me);
 /* EXERCISE G
 
 Write a piece of code for programmatically removing the last skill from the skills array inside the me object.
 
 */
 
-// JS Functions
+delete me.lang3;
+console.log("Exercise G: ");
+console.log(me);
 
+// JS Functions
 /* EXERCISE 1
 
 Write a function called dice; it should randomize an integer number between 1 and 6.
-
 */
-
+let random;
+random = Math.floor(Math.random() * 6);
+console.log("Exercise 1: " + random);
 /* EXERCISE 2
 
 Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
