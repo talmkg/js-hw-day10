@@ -1,22 +1,27 @@
-
 /* EXERCISE A
 
 Create a variable called test and assign a string value to it.
 
 */
-
+let test = 23;
+console.log("Exercise A: done");
 /* EXERCISE B
 
 Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
 
 */
+let sum = 10 + 20;
+console.log("Exercise B: " + sum);
 
 /* EXERCISE C
 
 Create a variable called random and assign to it a random number between 0 and 20 (it should be randomly created at each execution).
 
 */
-
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+console.log("Exercise C: " + getRandomInt(20)); /*max, limit for random number*/
 /* EXERCISE D
 
 Create a variable called me and assign to it an object containing the following information: name = your name, surname = your surname, age = your age.
@@ -232,4 +237,3 @@ tree(3)
 Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 
 */
-
