@@ -1,4 +1,4 @@
-<center>#23 Exercises (Day 10 - Solo Project)</center>
+#23 Exercises (Day 10 - Solo Project)
 
 <p align="center">
   
