@@ -1,3 +1,4 @@
+const movies = require("./movies");
 /* EXERCISE A
 
 Create a variable called test and assign a string value to it.
@@ -87,7 +88,7 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 function SplitMe(str) {
   return str.split(" ");
 }
-console.log(SplitMe("Wassup my name is Tim"));
+console.log("Exercise 3: " + SplitMe("Wassup my name is Tim"));
 /* EXERCISE 4
 
 Write a function called deleteOne which receives a string and a boolean as parameters.
@@ -96,26 +97,52 @@ If the boolean value is true it should return the string without the first lette
 
 */
 
+function deleteOne(boolean, str1) {
+  if (boolean > 1) {
+    return str1.slice(1);
+  } else {
+    return str1.slice(0, -1);
+  }
+}
+console.log("Exercise 4:", deleteOne(0, "hello"));
 /* EXERCISE 5
 
 Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
 
 Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
-
 */
+function onlyLetters(string3) {
+  return string3.replace(/[0-9]/g, "");
+}
+console.log("Exercise 5: " + onlyLetters("Maybe 6 or 8")); // 👉️ a b c
 
 /* EXERCISE 6
 
 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 
 */
-
+function isThisAnEmail(email) {
+  let validmail =
+    /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/gi;
+  if (validmail.test(email)) {
+    /*test = Returns a Boolean value that indicates whether or not a pattern exists in a searched string.*/
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log("Exercise 6: " + isThisAnEmail("tim@gmail.com"));
 /* EXERCISE 7
 
 Write a function called whatDayIsIt that should return the current day of the week.
 
 */
-
+function whatDayIsIt() {
+  let today = new Date();
+  let whatDayLetters = today.toLocaleString("default", { weekday: "long" });
+  return whatDayLetters;
+}
+console.log("Exercise 7: " + whatDayIsIt());
 /* EXERCISE 8
 
 Write a function called rollTheDices which receives a number as a parameter.
@@ -135,7 +162,16 @@ values: [3, 3, 4]
 }
 
 */
-
+function dice() {
+  min = 1;
+  max = 6;
+  range = max - min + 1;
+  for (let i = 0; i < 6; i++) {
+    let rand = Math.floor(Math.random() * range) + min;
+    return rand;
+  }
+}
+console.log("Exercise 8: " + dice());
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
@@ -147,7 +183,22 @@ Write a function called howManyDays which receives a date as a parameter and ret
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
+function isTodayMyBirthday(randomDate) {
+  let thisDay = new Date();
+  if (
+    randomDate.getDate() === thisDay.getDate() &&
+    randomDate.getMonth() === thisDay.getMonth()
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(
+  "Exercise 10: Is today my birthday? ",
+  isTodayMyBirthday(new Date("10-10"))
+);
 // JS Arrays & Objects
 
 // NOTE: the movies array used in some exercises is defined at the end of this file
@@ -159,12 +210,38 @@ Write a function called deleteProp which receives an object and a string as para
 and returns the given object after deleting its property named as the given string.
 
 */
+function deleteProp(obj, prop) {
+  if (obj.hasOwnProperty(prop)) {
+    //make sure the property exists
+    delete obj[prop];
+  }
+  return obj;
+}
 
 /* EXERCISE 12
 
 Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 
 */
+function oldestMovie(arr) {
+  let oldest = arr[0].Year;
+  let movie = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].Year < oldest) {
+      oldest = arr[i].Year;
+    }
+  }
+  return movie;
+}
+const oldestMovieObj = oldestMovie(movies);
+
+console.log(
+  "Exercise 12: " +
+    oldestMovieObj.Title +
+    " is the oldest movie made in " +
+    oldestMovieObj.Year
+);
 
 /* EXERCISE 13
 
@@ -177,7 +254,13 @@ Write a function called countMovies which returns the number of movies contained
 Write a function called onlyTheTitles which creates an array with just the titles of the movies contained in the provided movies array.
 
 */
-
+function onlyTheTitles(arr) {
+  let titles = [];
+  for (let i = 0; i < arr.length; i++) {
+    titles.push(arr[i].Title);
+  }
+  return titles;
+}
 /* EXERCISE 15
 
 Write a function called onlyInThisMillennium which returns only the movies produced in this millennium from the provided movies array.
@@ -255,5 +338,4 @@ tree(3)
 /* EXERCISE 23
 
 Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
-
 */
